@@ -224,7 +224,7 @@ second and third column, respectively. The matrix `F` stores the triangle
 connectivity: each line of `F` denotes a triangle whose 3 vertices are
 represented as indices pointing to rows of `V`.
 
-![A simple mesh made of 2 triangles and 4 vertices.](images/VF.png)
+![A simple mesh made of 2 triangles and 4 vertices.](images/VF.jpg)
 
 Note that the order of the vertex indices in `F` determines the orientation of
 the triangles and it should thus be consistent for the entire surface.
@@ -292,7 +292,7 @@ Please see the documentation in
 [Viewer.h](../include/igl/Viewer/Viewer.h) for more details.
 
 ![([Example 102](102_DrawMesh/main.cpp)) loads and draws a
-mesh.](images/102_DrawMesh.png)
+mesh.](images/102_DrawMesh.jpg)
 
 ## [Interaction with keyboard and mouse](#interactionwithkeyboardandmouse) [interactionwithkeyboardandmouse]
 
@@ -381,7 +381,7 @@ The first row extracts the third column from `V` (the z coordinate of each
 vertex) and the second calls a libigl functions that converts a scalar field to colors. The second parameter of jet normalizes the scalar field to lie between 0 and 1 before applying the transfer function.
 
 ![([Example 104](104_Colors/main.cpp)) igl::jet converts a scalar field to a
-color field.](images/104_Colors.png)
+color field.](images/104_Colors.jpg)
 
 `igl::jet` is an example of a standard function in libigl: it takes simple
 types and can be easily reused for many different tasks.  Not committing to
@@ -421,7 +421,7 @@ Eigen::Vector3d M = V.colwise().maxCoeff();
 ```
 
 ![([Example 105](105_Overlays/main.cpp)) The bounding box of a mesh is shown
-using overlays.](images/105_Overlays.png)
+using overlays.](images/105_Overlays.jpg)
 
 ## [Viewer Menu](#viewermenu) [viewermenu]
 
@@ -480,7 +480,7 @@ viewer.ngui->addVariable<bool>("bool",[&](bool val) {
 });
 ```
 
-![([Example 106](106_ViewerMenu/main.cpp)) The UI of the viewer can be easily customized.](images/106_ViewerMenu.png)
+![([Example 106](106_ViewerMenu/main.cpp)) The UI of the viewer can be easily customized.](images/106_ViewerMenu.jpg)
 
 # Chapter 2: Discrete Geometric Quantities and Operators
 This chapter illustrates a few discrete quantities that libigl can compute on a
@@ -1834,7 +1834,7 @@ mesh ([Example 501](501_HarmonicParam/main.cpp)).
 
 ![([Example 501](501_HarmonicParam/main.cpp)) Harmonic parametrization. (left)
 mesh with texture, (right) UV parametrization with
-texture](images/501_HarmonicParam.png)
+texture](images/501_HarmonicParam.jpg)
 
 ## [Least squares conformal maps](#leastsquareconformalmaps) [leastsquareconformalmaps]
 
@@ -1884,7 +1884,7 @@ vertices to two arbitrary positions. The full source code is provided in [Exampl
 
 
 ![([Example 502](502_LSCMParam/main.cpp)) LSCM parametrization. (left) mesh
-with texture, (right) UV parametrization](images/502_LSCMParam.png)
+with texture, (right) UV parametrization](images/502_LSCMParam.jpg)
 
 ## [As-rigid-as-possible parametrization](#asrigidaspossible) [asrigidaspossible]
 
@@ -1906,7 +1906,7 @@ the distortion.
 
 ![([Example 503](502_ARAPParam/main.cpp)) As-Rigid-As-Possible parametrization.
 (left) mesh with texture, (right) UV parametrization with
-texture](images/503_ARAPParam.png)
+texture](images/503_ARAPParam.jpg)
 
 ## [N-rotationally symmetric tangent fields](#nrotationallysymmetrictangetfields) [nrotationallysymmetrictangetfields]
 
@@ -1930,7 +1930,7 @@ b_soft_weight, bc_soft), and returns the interpolated field for each face of
 the triangle mesh (output_field), plus the singularities of the field
 (output_singularities).
 
-![Design of a unit-length vector field](images/504_vector_field.png)
+![Design of a unit-length vector field](images/504_vector_field.jpg)
 
 The singularities are vertices where the field vanishes (highlighted in red in
 the figure above). `igl::nrosy` can also generate N-RoSy fields [#levy_2008][],
@@ -1939,7 +1939,7 @@ defined up to a constant rotation of $2\pi / N$. As can be observed in
 the following figure, the singularities of the fields generated with different
 N are of different types and they appear in different positions.
 
-![Design of a 2-,4- and 9-RoSy field](images/504_nrosy_field.png)
+![Design of a 2-,4- and 9-RoSy field](images/504_nrosy_field.jpg)
 
 We demonstrate how to call and plot N-RoSy fields in [Example
 504](504_NRosyDesign/main.cpp), where the degree of the field can be change
@@ -1964,7 +1964,7 @@ remeshing. The field constraints are usually manually specified or extracted
 from the principal curvature directions. In [[Example
 506](506_FrameField/main.cpp)], we simply fix one face in a random direction.
 
-![Initial cross field prescribing the edge alignment.](images/505_MIQ_1.png)
+![Initial cross field prescribing the edge alignment.](images/505_MIQ_1.jpg)
 
 ### Combing and cutting
 
@@ -1977,13 +1977,13 @@ length cross fields.
 
 We thus rotate the field,
 
-![Bisector field.](images/505_MIQ_2.png)
+![Bisector field.](images/505_MIQ_2.jpg)
 
 and we remove the rotation ambiguity by assigning to each face a u and a v
 direction. The assignment is done with a breadth-first search starting from a
 random face.
 
-![Combed bisector field.](images/505_MIQ_3.png)
+![Combed bisector field.](images/505_MIQ_3.jpg)
 
 You can imagine this process as combing an hairy surface: you will be able to
 comb part of it, but at some point you will not be able to consistently comb
@@ -1991,12 +1991,12 @@ the entire surface ([Hairy ball
 theorem](http://en.wikipedia.org/wiki/Hairy_ball_theorem)). The discontinuities
 in the combing define the cut graph:
 
-![Cut graph.](images/505_MIQ_4.png)
+![Cut graph.](images/505_MIQ_4.jpg)
 
 Finally, we rotate the combed field by 45 degrees to undo the initial degrees
 rotation:
 
-![Combed cross field.](images/505_MIQ_5.png)
+![Combed cross field.](images/505_MIQ_5.jpg)
 
 The combed cross field can be seen as the ideal Jacobian of the parametrization
 that will be computed in the next section.
@@ -2014,17 +2014,17 @@ where $X_u$ and $X_u$ denotes the combed cross field. Solving this
 problem generates a parametrization whose u and v isolines are aligned with the
 input cross field.
 
-![Poisson parametrization.](images/505_MIQ_8.png)
+![Poisson parametrization.](images/505_MIQ_8.jpg)
 
 We hide the seams by adding integer constraints to the Poisson problem
 that align the isolines on both sides of each seam [#bommes_2009].
 
-![Seamless Poisson parametrization.](images/505_MIQ_7.png)
+![Seamless Poisson parametrization.](images/505_MIQ_7.jpg)
 
 Note that this parametrization can only be used for remeshing purposes, since
 it contains many overlaps.
 
-![Seamless Poisson parametrization (in 2D).](images/505_MIQ_6.png)
+![Seamless Poisson parametrization (in 2D).](images/505_MIQ_6.jpg)
 
 A quad mesh can be extracted from this parametrization using
 [libQEx](https://github.com/hcebke/libQEx) (not included in libigl).
@@ -2047,7 +2047,7 @@ for the affine part.
 
 ![Interpolation of a frame field. Colors on the vectors denote the desired
 scale. The red faces contains the frame field
-constraints.](images/506_FrameField_1.png)
+constraints.](images/506_FrameField_1.jpg)
 
 After the interpolation, the surface is warped to transform each frame into an
 orthogonal and unit length cross (i.e. removing the scaling and skewness from
@@ -2055,12 +2055,12 @@ the frame). This deformation defines a new embedding (and a new metric) for the
 surface.
 
 ![The surface is deformed to transform the frame field in a cross
-field.](images/506_FrameField_2.png)
+field.](images/506_FrameField_2.jpg)
 
 The deformed surface can the be isotropically remeshed using the MIQ algorithm
 that has been presented in the previous section.
 
-![The deformed surface is isotropically remeshed.](images/506_FrameField_3.png)
+![The deformed surface is isotropically remeshed.](images/506_FrameField_3.jpg)
 
 The UV coordinates of the deformed surface can then be used to transport the
 parametrization to the original surface, where the isolines will trace a quad
@@ -2068,7 +2068,7 @@ mesh whose elements are similar to the shape prescribed in the input frame
 field.
 
 ![The global parametrization is lifted to the original surface to create the
-anisotropic quad meshing.](images/506_FrameField_4.png)
+anisotropic quad meshing.](images/506_FrameField_4.jpg)
 
 Our implementation ([Example 506](506_FrameField/main.cpp)) uses MIQ to
 generate the UV parametrization, but other algorithms could be applied: the
@@ -2083,7 +2083,7 @@ vector-sets, with arbitrary angles between them and with arbitrary lengths
 libigl provides the function `igl::n_polyvector` to design them starting from a
 sparse set of constraints ([Example 507](507_PolyVectorField/main.cpp)).
 
-![Interpolation of a 6-PolyVector field (right) and a 12-PolyVector field from a sparse set of random constraints.](images/507_PolyVectorField.png)
+![Interpolation of a 6-PolyVector field (right) and a 12-PolyVector field from a sparse set of random constraints.](images/507_PolyVectorField.jpg)
 
 The core idea is to represent the vector set as the roots of a complex
 polynomial: The polynomial coefficients are then harmonically interpolated
@@ -2114,7 +2114,7 @@ smoothness, with a local step, that projects the field on every face to the
 closest conjugate field ([Example 508](508_ConjugateField/main.cpp)).
 
 ![A smooth 4-PolyVector field (left) is deformed to become a conjugate field
-(right).](images/508_ConjugateField.png)
+(right).](images/508_ConjugateField.jpg)
 
 ## [Planarization](#planarization) [planarization]
 
@@ -2127,14 +2127,14 @@ satisfies a user-given planarity threshold.
 
 ![A non-planar quad mesh (left) is planarized using the libigl function
 igl::palanarize (right). The colors represent the planarity of the
-quads.](images/509_Planarization.png)
+quads.](images/509_Planarization.jpg)
 
 ## [Integrable PolyVector Fields](#integrable) [integrable]
 
 Vector-field guided surface parameterization is based on the idea of designing the gradients
 of the parameterization functions (which are tangent vector fields on the surface) instead of the functions themselves. Thus, vector-set fields (N-Rosy, frame fields, and polyvector fields) that are to be used for parameterization (and subsequent remeshing) need to be integrable: it must be possible to break them down into individual vector fields that are gradients of scalar functions. Fields obtained by most smoothness-based design methods (eg. [#levy_2008][], [#knoppel_2013][], [#diamanti_2014][], [#bommes_2009][], [#panozzo_2014][]) do not have this property. In [#diamanti_2015][], a method for creating integrable polyvector fields was introduced. This method takes as input a given field and improves its integrability by removing the vector field curl, thus turning it into a gradient of a function ([Example 510](510_Integrable/main.cpp)).
 
-![Integration error is removed from a frame field to produce a field aligned parameterization free of triangle flips.](images/510_Integrable.png)
+![Integration error is removed from a frame field to produce a field aligned parameterization free of triangle flips.](images/510_Integrable.jpg)
 
 This method retains much of the core principles of the polyvector framework - it expresses the condition for zero discrete curl condition (which typically requires integers for the vector matchings) into a condition involving continuous variables only. This is done using coefficients of appropriately defined polynomials. The parameterizations generated by the resulting fields are exactly aligned to the field directions and contain no inverted triangles.
 
@@ -2142,7 +2142,7 @@ This method retains much of the core principles of the polyvector framework - it
 
 While mostly applicable for the design of symmetric fields (i.e. fields that comprise of vector sets with symmetries between them at each point, e.g. N-RoSy or frame-fields), the framework presented in [#diamanti_2014][] can be used to design completely general fields, with possibly no such symmetries. For example, one can design fields that at each point comprise of an arbitrary number of vectors, not required to be collinear - as opposed e.g. to the case of the 4 pairwise-collinear vectors designed in the example ([Example 507](507_PolyVectorField/main.cpp)). This capability is implemented in the function igl::n_polyvector_general, and is illustrated in the example ([Example 511](511_PolyVectorFieldGeneral/main.cpp)).
 
-![Interpolation of a general field with 3 (left) and 9 vectors per point field from a sparse set of random constraints (in red). The field is defined on all mesh faces, but is only shown on a subset for clarity. ](images/511_PolyVectorFieldGeneral.png)
+![Interpolation of a general field with 3 (left) and 9 vectors per point field from a sparse set of random constraints (in red). The field is defined on all mesh faces, but is only shown on a subset for clarity. ](images/511_PolyVectorFieldGeneral.jpg)
 
 The design of these general directional fields (also called vector-set fields) is based on the same polynomial framework and includes the symmetric fields as a special case. Note that in the case that some symmetries do exist in the constraints, the final field is not guaranteed to have these symmetries everywhere else on the mesh. For example, designing a field with 3 vectors per point where, at the constrained faces, two of the vectors are on a line opposite to each other, we are not guaranteed to always have two pairwise-collinear vectors everywhere in the result, as can be seen in the picture. In some cases however (as is the case of the frame field in the previous example [Example 507](507_PolyVectorField/main.cpp)) these symmetries are in fact guaranteed due to the particular nature of the polynomial that applies in that case (two coefficients are 0).
 
@@ -2319,7 +2319,7 @@ igl::mleval(&engine,"spy(L)");
 ```
 
 ![The Matlab spy function is called from a libigl-based
-application.](images/602_Matlab_1.png)
+application.](images/602_Matlab_1.jpg)
 
 The results of Matlab computations can be returned back to the C++ application
 
@@ -2331,7 +2331,7 @@ igl::mlgetmatrix(&engine,"EV",EV);
 and plotted using the libigl viewer.
 
 ![4 Eigenfunctions of the Laplacian plotted in the libigl
-viewer.](images/602_Matlab_2.png)
+viewer.](images/602_Matlab_2.jpg)
 
 
 ### Saving a Matlab workspace
@@ -2438,7 +2438,7 @@ triangles and a minimal angle of 20 degrees. In [Example
 604](604_Triangle/main.cpp), the interior of a square (excluded a smaller square
 in its interior) is triangulated.
 
-![Triangulation of the interior of a polygon.](images/604_Triangle.png)
+![Triangulation of the interior of a polygon.](images/604_Triangle.jpg)
 
 ## [Tetrahedralization of closed surfaces](#tetrahedralizationofclosedsurfaces) [tetrahedralizationofclosedsurfaces]
 
@@ -2450,7 +2450,7 @@ using the function `igl::tetrahedralize` which wraps the Tetgen library ([Exampl
 igl::tetrahedralize(V,F,"pq1.414", TV,TT,TF);
 ```
 
-![Tetrahedralization of the interior of a surface mesh.](images/605_Tetgen.png)
+![Tetrahedralization of the interior of a surface mesh.](images/605_Tetgen.jpg)
 
 ## [Baking ambient occlusion](#bakingambientocclusion) [bakingambientocclusion]
 
@@ -2484,11 +2484,11 @@ Ambient occlusion can be used to darken the surface colors, as shown in
 [Example 606](606_AmbientOcclusion/main.c)
 
 ![A mesh rendered without (left) and with (right) ambient
-occlusion.](images/606_AmbientOcclusion.png)
+occlusion.](images/606_AmbientOcclusion.jpg)
 
 ## [Screen Capture](#screencapture) [screencapture]
 
-Libigl supports read and writing to .png files via the
+Libigl supports read and writing to .jpg files via the
 [stb image](http://nothings.org/stb_image.h) code.
 
 With the viewer used in this tutorial, it is possible to render the scene in a
@@ -2505,11 +2505,11 @@ Eigen::Matrix<unsigned char,Eigen::Dynamic,Eigen::Dynamic> A(1280,800);
 viewer.core.draw_buffer(viewer.data,viewer.opengl,false,R,G,B,A);
 
 // Save it to a PNG
-igl::png::writePNG(R,G,B,A,"out.png");
+igl::png::writePNG(R,G,B,A,"out.jpg");
 ```
 
 In [Example 607](607_ScreenCapture/main.cpp) a scene is rendered in a temporary
-png and used to texture a quadrilateral.
+jpg and used to texture a quadrilateral.
 
 
 ## [Locally Injective Maps](#locallyinjectivemaps) [locallyinjectivemaps]
@@ -2524,7 +2524,7 @@ deformation energies. A simple deformation of a 2D grid is computed in [Example
 608](608_LIM/main.cpp).
 
 ![A mesh (left) deformed using Laplacian editing (middle) and with Laplacian
-editing plus the anti-flipping constraints (right).](images/608_LIM.png)
+editing plus the anti-flipping constraints (right).](images/608_LIM.jpg)
 
 ## [Boolean operations on meshes](#booleanoperationsonmeshes) [booleanoperationsonmeshes]
 
@@ -3126,7 +3126,7 @@ Hierarchy](http://en.wikipedia.org/wiki/Bounding_volume_hierarchy) constructed
 by Embree, and `fid` and `vid` are the picked face and vertex, respectively.
 
 ![([Example 708](708_Picking/main.cpp)) Picking via ray casting. The selected
-vertices are colored in red.](images/607_Picking.png)
+vertices are colored in red.](images/607_Picking.jpg)
 
 ## [Vector Field Visualization](#vectorfieldvisualizer) [vectorfieldvisualizer]
 
@@ -3155,7 +3155,7 @@ on Pardiso is available
 [here](https://github.com/MichaelRabinovich/Scalable-Locally-Injective-Mappings).
 
 ![A locally injective parametrization of a mesh with 50k faces is computed
-using the SLIM algorithm in 10 iterations.](images/slim.png)
+using the SLIM algorithm in 10 iterations.](images/slim.jpg)
 
 ## [Subdivision surfaces](#subdivision) [subdivision]
 
